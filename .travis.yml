@@ -1,3 +1,4 @@
+sudo: required
 language: bash
 services: docker
 
@@ -10,3 +11,8 @@ script:
 after_script:
   - docker images
 
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push USER/REPO;
+    fi

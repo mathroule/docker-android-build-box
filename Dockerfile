@@ -5,7 +5,8 @@ MAINTAINER Mathieu Rul
 ENV ANDROID_HOME /opt/android-sdk
 
 # Get the latest version from https://developer.android.com/studio/index.html
-ENV ANDROID_SDK_VERSION="3859397"
+# FIXME ENV ANDROID_SDK_VERSION="3859397"
+ENV ANDROID_SDK_VERSION="25.2.5"
 
 # Set locale
 ENV LANG en_US.UTF-8
@@ -51,7 +52,8 @@ RUN apt-get update && \
     apt-get clean
 
 # Install Android SDK
-RUN wget -q -O tools.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
+# FIXME RUN wget -q -O tools.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
+RUN wget -q -O tools.zip https://dl.google.com/android/repository/tools_r${ANDROID_SDK_VERSION}-linux.zip && \
     unzip -q tools.zip && \
     rm -fr $ANDROID_HOME tools.zip && \
     mkdir -p $ANDROID_HOME && \

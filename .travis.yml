@@ -8,6 +8,7 @@ install: true
 script:
   - export REPO=$DOCKER_USERNAME/docker-android-build-box
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - export COMMIT=${TRAVIS_COMMIT::6}
   - echo $REPO:$TAG:$COMMIT
   - docker build -f Dockerfile -t $REPO:$COMMIT .
 

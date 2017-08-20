@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/mathroule/docker-android-build-box.svg?branch=master)](https://travis-ci.org/mathroule/docker-android-build-box)
 
-[![docker icon](http://dockeri.co/image/mathroule/android-build-box)](https://hub.docker.com/r/mathroule/android-build-box/)
+[![docker icon](http://dockeri.co/image/mathroule/docker-android-build-box)](https://hub.docker.com/r/mathroule/docker-android-build-box/)
 
 
 ## Introduction

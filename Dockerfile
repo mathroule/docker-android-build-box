@@ -40,8 +40,8 @@ RUN apt-get update && \
         openssh-client \
         pkg-config \
         python-software-properties \
-        software-properties-common \
         ruby-full \
+        software-properties-common \
         unzip \
         zip \
         zlib1g-dev && \

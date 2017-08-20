@@ -26,7 +26,7 @@ It include following components:
 
 ## Docker Pull Command
 
-The docker image is publicly automated build on [Docker Hub](https://hub.docker.com/r/mathroule/android-build-box/) based on Dockerfile in this repo, so there is no hidden staff in image. To pull the latest docker image:
+The docker image is publicly automated build on [Docker Hub](https://hub.docker.com/r/mathroule/docker-android-build-box/) based on Dockerfile in this repo, so there is no hidden staff in image. To pull the latest docker image:
 
     docker pull mathroule/android-build-box:latest
 
@@ -38,7 +38,7 @@ The docker image is publicly automated build on [Docker Hub](https://hub.docker.
 You can use this docker image to build your Android project with a single docker command:
 
     cd <android project directory>  # change working directory to your project root directory.
-    docker run --rm -v `pwd`:/project mathroule/android-build-box bash -c 'cd /project; ./gradlew build'
+    docker run --rm -v `pwd`:/project mathroule/docker-android-build-box bash -c 'cd /project; ./gradlew build'
 
 
 
@@ -47,7 +47,7 @@ You can use this docker image to build your Android project with a single docker
 If you have Android code in Bitbucket and want to use it pipeline to build your Android code, you can simply specific this docker image.
 Here is an example of `bitbucket-pipelines.yml`
 
-    image: mathroule/android-build-box:latest
+    image: mathroule/docker-android-build-box:latest
 
     pipelines:
       default:
@@ -62,7 +62,7 @@ Here is an example of `bitbucket-pipelines.yml`
 If you want to build docker image by yourself, you can use following `docker build` command to build your image.
 The image itself up to 5.5 GB, check your free disk space before build it.
 
-    docker build -t android-build-box .
+    docker build -t docker-android-build-box .
 
 
 ## Contribution

@@ -28,7 +28,7 @@ It include following components:
 
 The docker image is publicly automated build on [Docker Hub](https://hub.docker.com/r/mathroule/docker-android-build-box/) based on Dockerfile in this repo, so there is no hidden staff in image. To pull the latest docker image:
 
-    docker pull mathroule/android-build-box:latest
+    docker pull mathroule/docker-android-build-box:latest
 
 
 ## Usage

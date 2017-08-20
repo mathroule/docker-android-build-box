@@ -6,13 +6,16 @@ services: docker
 install: true
 
 script:
-  - docker build -t android-build-box .
+  - export REPO=$DOCKER_USERNAME/docker-android-build-box
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - echo $REPO:$TAG:$COMMIT
+  - docker build -f Dockerfile -t $REPO:$COMMIT .
 
 after_script:
   - docker images
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push mathroule/docker-android-build-box;
-    fi
+  - docker login -e $DOCKER_EMAIL -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker tag $REPO:$COMMIT $REPO:$TAG
+  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+  - docker push $REPO

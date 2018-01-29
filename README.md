@@ -17,7 +17,7 @@ It include following components:
 
 * Ubuntu 16.10
 * Android SDK 26
-* Android build tools 26.0.1
+* Android build tools 27.0.3
 * extra-android-m2repository
 * extra-google-google\_play\_services
 * extra-google-m2repository

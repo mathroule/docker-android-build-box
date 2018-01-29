@@ -66,8 +66,8 @@ RUN wget -q -O tools.zip https://dl.google.com/android/repository/tools_r${ANDRO
     echo "Install platform-tools" && \
     echo y | tools/android --silent update sdk --no-ui --all --filter platform-tools && \
 
-    echo "Install build-tools-26.0.1" && \
-    echo y | tools/android --silent update sdk --no-ui --all --filter build-tools-26.0.1 && \
+    echo "Install build-tools-27.0.3" && \
+    echo y | tools/android --silent update sdk --no-ui --all --filter build-tools-27.0.3 && \
 
     echo "Install extra-android-m2repository" && \
     echo y | tools/android --silent update sdk --no-ui --all --filter extra-android-m2repository && \

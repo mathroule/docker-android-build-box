@@ -90,10 +90,9 @@ ENV TERM dumb
 ENV JAVA_OPTS "-Xms512m -Xmx1024m"
 ENV GRADLE_OPTS "-XX:+UseG1GC -XX:MaxGCPauseMillis=1000"
 
-# Confirms that we agreed on the Terms and Conditions of the SDK itself
-# (if we didn’t the build would fail, asking us to agree on those terms).
+# Copy sdk license agreement files.
 RUN mkdir "${ANDROID_HOME}/licenses" || true
-RUN echo "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > "${ANDROID_HOME}/licenses/android-sdk-license"
+COPY sdk/licenses/* "${ANDROID_HOME}/licenses/"
 
 # Install Fastlane
 RUN gem install fastlane -NV

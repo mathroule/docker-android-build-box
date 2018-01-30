@@ -144,22 +144,7 @@ RUN echo "installing sdk tools" && \
     yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
         "extras;google;google_play_services" \
         "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
-        "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.1" && \
-    echo "installing Google APIs" && \
-    yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
-        "add-ons;addon-google_apis-google-24" \
-        "add-ons;addon-google_apis-google-23" \
-        "add-ons;addon-google_apis-google-22" \
-        "add-ons;addon-google_apis-google-21" \
-        "add-ons;addon-google_apis-google-19" \
-        "add-ons;addon-google_apis-google-18" \
-        "add-ons;addon-google_apis-google-17" \
-        "add-ons;addon-google_apis-google-16" && \
-    echo "installing emulator " && \
-    yes | "$ANDROID_HOME"/tools/bin/sdkmanager "emulator" && \
-    echo "installing system image with android 25 and google apis" && \
-    yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
-        "system-images;android-25;google_apis;x86_64"
+        "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.1"
 
 # Copy sdk license agreement files.
 RUN mkdir -p $ANDROID_HOME/licenses
